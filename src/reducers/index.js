@@ -1,8 +1,4 @@
-import React from "react"
-import {combineReducers} from "redux";
-
-
-const formsaved=(state=[],action)=>
+export const formsaved=(state=[],action)=>
 {
     
     if(action.type==='SAVE_FORM')
@@ -14,17 +10,23 @@ return[...state,
         email:action.payload.email,
         phone:action.payload.phone,
         gender:action.payload.gender,
-        dept:action.payload.dept
+        dept:action.payload.dept,
+        errmessage:action.payload.errmessage
 }];
 }
 return state;
+if(action.type==='CANCEL_FORM')
+{
+    return[...state,{
+        fname:"",
+        lname:"",
+        email:"",
+        phone:"",
+        gender:"",
+        dept:"",
+        errmessage:"enter values"
+    }]
+}
 }
 
-const cancelform=(olddata=[])=>
-{
-return olddata;
-}
-export default combineReducers({
-    formsaved:formsaved,
-    cancelform:cancelform
-})
+

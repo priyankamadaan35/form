@@ -16,24 +16,17 @@ class Form extends React.Component {
             errmessage: "enter values"
         }
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleClear = this.handleClear.bind(this);
+        
+        
     };
 
-handleClear()
-{
-    console.log("hi")
-}
+
     handleChange(event) {
         this.setState({ [event.target.name]: event.target.value })
+        console.log('fname', this.state.fname)
+    console.log('lname', this.state.lname)
     }
-    handleSubmit(e) {
-
-        
-
-
-    }
-
+    
     render() {
         return (
             <div>
@@ -55,8 +48,8 @@ handleClear()
                         <option value="ME">ME</option>
                         <option value="ELE">ELE</option>
                     </select><br /><br /><br />
-                    <button onClick={ this.handleSubmit}>SAVE</button>&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={this.handleClear }>CANCEL</button><br />
+                    <button onClick={()=>this.props.Saveform(this.state)}>SAVE</button>&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <button >CANCEL</button><br />
                     <br />
                     <br />
 

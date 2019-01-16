@@ -4,11 +4,12 @@ import {Provider} from "react-redux";
 import {createStore} from "redux";
 import App from './components/App';
 
-import reducers from './reducers/index';
+
+import {formsaved} from './reducers/index';
 
 
 ReactDOM.render(
-<Provider store={createStore(reducers)}>
+<Provider store={createStore(formsaved)}>
 <App/>
 </Provider>,
 document.getElementById("root"));
